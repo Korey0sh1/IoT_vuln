@@ -18,7 +18,11 @@ Overview
 
 **TOTOLINK T10_v2 V5.9c.5061_B20200511** has a **stack overflow** vulnerability detected at function **setWiFiWpsConfig**. Attackers can send dirty data by mqtt packet into parameter **pin** to control the return address and execute shellcode. <br>
 
+Vulnerability details
+=====================
+The vulnerability is detected at **/lib/cste_modules/wps.so** <br>
 
+In the function **setWiFiWpsConfig**, the content obtained by program through parameter **pin** given by MQTT data packet is passed to variable Var **v11**. Then, the variable Var is copyed to the variable Var **v22**, however,**22** is on the stack,but there isn't any length check of **v11**.So we can set **wscMode** = **1** and **wscPinMode** = **1** to execute **strncpy**,and set the length of **pin's content** very long to cause stack overflow.
 
 
     

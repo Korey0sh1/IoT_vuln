@@ -11,7 +11,7 @@ Information
 
 **Affected firmware version**: V5.9c.5061_B20200511 <br>
 
-**Firmware download address**: http://www.totolink.cn/home/menu/detail.html?menu_listtpl=download&id=16&ids=36 <br>
+**Firmware download address**: https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/172/ids/36.html <br>
 
 Overview
 ===========

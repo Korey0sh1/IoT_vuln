@@ -23,8 +23,8 @@ Vulnerability details
 The vulnerability is detected at **/bin/httpd** <br>
 
 In the function **fromSetRouteStatic**, the content obtained by program through parameter **list** given by http is passed to variable **v4**. Variable **v4** enters the function **save_staticroute_data** as a parameter, and a stack overflow vulnerability exists within **save_staticroute_data** <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/8.png) <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/9.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/13.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/14.png) <br>
 <br>
 
 Proof of Code
@@ -45,6 +45,6 @@ print(res.text)
 
 Attack Demo
 ========
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/10.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/11.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/12.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/15.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/16.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/17.png)

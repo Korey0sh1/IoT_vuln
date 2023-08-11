@@ -23,8 +23,8 @@ Vulnerability details
 The vulnerability is detected at **/bin/httpd** <br>
 
 In the function **formSetQosBand**, the content obtained by program through parameter **list** given by http is passed to variable **v4**. Variable **v4** enters the function **set_qosMib_list** as a parameter, and a stack overflow vulnerability exists within **set_qosMib_list** <br>
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/0.png) <br>
-
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/8.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/9.png) <br>
 <br>
 
 Proof of Code
@@ -45,6 +45,6 @@ print(res.text)
 
 Attack Demo
 ========
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/1.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/2.png)
-![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/3.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/10.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/11.png)
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/12.png)

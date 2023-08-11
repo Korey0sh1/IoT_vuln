@@ -43,9 +43,10 @@ res = requests.post(url=url,data=data)
 print(res.text)
 ```
 
-
 Attack Demo
 ========
 <br>
-
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/1.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/2.png) <br>
+![](https://github.com/Korey0sh1/IoT_vuln/blob/main/Tenda/AX3/img/3.png) <br>
 
